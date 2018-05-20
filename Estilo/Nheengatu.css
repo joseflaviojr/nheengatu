@@ -1,0 +1,116 @@
+@charset "UTF-8";
+/* ---------------------------------------------- */
+/*
+    Copyright (C) 2018 José Flávio de Souza Dias Júnior
+    This file is part of Nheengatu - <http://joseflavio.com/nheengatu/>.
+*/
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+body {
+  margin: 5%;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.5em;
+  text-align: left; }
+
+em, em em em, em em em em em {
+  font-style: italic; }
+
+em em, em em em em {
+  font-style: normal; }
+
+a:link, a:visited, a:hover, a:active {
+  color: inherit;
+  text-decoration: underline; }
+
+header {
+  padding: 10px;
+  margin-bottom: 2em;
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
+  text-align: center; }
+  header .title {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center; }
+  header .author, header .date {
+    margin: 0;
+    text-align: center; }
+
+#TOC ul {
+  margin-left: 1em;
+  padding: 0; }
+  #TOC ul li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+    #TOC ul li a:link, #TOC ul li a:visited, #TOC ul li a:hover, #TOC ul li a:active {
+      text-decoration: none; }
+
+figure {
+  margin: 2em auto;
+  text-align: center; }
+  figure img {
+    -webkit-box-shadow: 6px 6px 17px -7px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 6px 6px 17px -7px rgba(0, 0, 0, 0.23);
+    box-shadow: 6px 6px 17px -7px rgba(0, 0, 0, 0.23); }
+
+table {
+  min-width: 50%;
+  margin: 2em auto;
+  border-collapse: collapse;
+  border: 1px solid #b9b8b8; }
+  table th, table td {
+    padding: 5px;
+    border: 1px solid #b9b8b8; }
+
+.sourceCode-div {
+  margin-top: 2em;
+  margin-bottom: 2em; }
+  .sourceCode-div p {
+    text-align: center; }
+
+.sourceCode {
+  font-size: 106%; }
+
+.math-div {
+  margin-top: 2em;
+  margin-bottom: 2em; }
+  .math-div p {
+    text-align: center; }
+
+blockquote {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 20%;
+  margin-right: 0; }
+
+.destaque {
+  background: #ededed;
+  background: -moz-linear-gradient(-45deg, #ededed 0%, #f6f6f6 53%, white 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, #ededed), color-stop(53%, #f6f6f6), color-stop(100%, white));
+  background: -webkit-linear-gradient(-45deg, #ededed 0%, #f6f6f6 53%, white 100%);
+  background: -o-linear-gradient(-45deg, #ededed 0%, #f6f6f6 53%, white 100%);
+  background: -ms-linear-gradient(-45deg, #ededed 0%, #f6f6f6 53%, white 100%);
+  background: linear-gradient(135deg, #ededed 0%, #f6f6f6 53%, white 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff', GradientType=1 );
+  margin: 0;
+  padding: 0.2em 2em 0.2em 2em; }
+
+.footnote-ref {
+  text-decoration: none !important; }
+
+.footnote-back {
+  text-decoration: none !important; }
+
+.toc-section-number::after {
+  content: "."; }
+
+.header-section-number::after {
+  content: "."; }
+
+/* ---------------------------------------------- */
+
+/*# sourceMappingURL=Nheengatu.css.map */

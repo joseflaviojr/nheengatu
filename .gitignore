@@ -1,0 +1,77 @@
+
+# .gitignore universal 1.1
+
+# Sistema Operacional
+.DS_Store*
+.Spotlight*
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.so
+*.dylib
+*.dll
+*.lai
+*.la
+*.a
+*.lib
+*.exe
+*.out
+*.app
+
+# Geral
+rascunho/
+Rascunho/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Gradle
+.gradle/
+build/
+
+# Maven
+target/
+test-output/
+
+# Visual Studio Code
+.vscode/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# IntelliJ IDEA
+*.iml
+*.ipr
+*.iws
+out/
+
+# SASS
+.sass-cache/
+
+# Jekyll
+_site
+.jekyll-metadata
+
+# C/C++
+*.slo
+*.lo
+*.o
+*.obj
+*.gch
+*.pch
+
+# R
+.Rhistory
+
+# Fortran
+*.mod
+
+# Logs
+*.log
+hs_err_pid*

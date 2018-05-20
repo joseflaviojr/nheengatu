@@ -1,0 +1,45 @@
+/* ---------------------------------------------- */
+/*
+    Copyright (C) 2018 José Flávio de Souza Dias Júnior
+    This file is part of Nheengatu - <http://joseflavio.com/nheengatu/>.
+*/
+/* ---------------------------------------------- */
+
+@import "Nheengatu.scss";
+
+$tela_p: "(min-width:    0px) and (max-width:  767px)";
+$tela_m: "(min-width:  768px) and (max-width: 1024px)";
+$tela_g: "(min-width: 1025px)";
+
+/* ---------------------------------------------- */
+
+#cover, #cover-image {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+ol.toc {
+    
+    margin-left: 1em;
+    padding: 0;
+
+    li {
+        
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        a:link, a:visited, a:hover, a:active {
+            text-decoration: none;
+        }
+
+    }
+
+}
+
+.footnote-ref {
+    vertical-align: super;
+}
+
+/* ---------------------------------------------- */

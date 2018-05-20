@@ -1,0 +1,178 @@
+/* ---------------------------------------------- */
+/*
+    Copyright (C) 2018 José Flávio de Souza Dias Júnior
+    This file is part of Nheengatu - <http://joseflavio.com/nheengatu/>.
+*/
+/* ---------------------------------------------- */
+
+$tela_p: "(min-width:    0px) and (max-width:  767px)";
+$tela_m: "(min-width:  768px) and (max-width: 1024px)";
+$tela_g: "(min-width: 1025px)";
+
+/* ---------------------------------------------- */
+
+body {
+    margin: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.5em;
+    text-align: left;
+}
+
+em, em em em, em em em em em {
+    font-style: italic;
+}
+
+em em, em em em em {
+    font-style: normal;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: inherit;
+    text-decoration: underline;
+}
+
+header {
+
+    padding: 10px;
+    margin-bottom: 2em;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    text-align: center;
+
+    .title {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        text-align: center;
+    }
+    
+    .author, .date {
+        margin: 0;
+        text-align: center;
+    }
+
+}
+
+#TOC {
+    
+    ul {
+
+        margin-left: 1em;
+        padding: 0;
+
+        li {
+            
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+
+            a:link, a:visited, a:hover, a:active {
+                text-decoration: none;
+            }
+
+        }
+
+    }
+
+}
+
+figure {
+    
+    margin: 2em auto;
+    text-align: center;
+
+    img {
+        -webkit-box-shadow: 6px 6px 17px -7px rgba(0,0,0,0.23);
+        -moz-box-shadow: 6px 6px 17px -7px rgba(0,0,0,0.23);
+        box-shadow: 6px 6px 17px -7px rgba(0,0,0,0.23);
+    }
+
+}
+
+table {
+    
+    min-width: 50%;
+    margin: 2em auto;
+    border-collapse: collapse;
+    border: 1px solid rgb(185, 184, 184);
+
+    th, td {
+        padding: 5px;
+        border: 1px solid rgb(185, 184, 184);
+    }
+    
+}
+
+.sourceCode-div {
+    
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+    p {
+        text-align: center;
+    }
+
+}
+
+.sourceCode {
+    font-size: 106%;
+}
+
+.math-div {
+    
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+    p {
+        text-align: center;
+    }
+
+}
+
+blockquote {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 20%;
+    margin-right: 0;
+}
+
+.destaque {
+
+    background: rgba(237,237,237,1);
+    background: -moz-linear-gradient(-45deg, rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(237,237,237,1)), color-stop(53%, rgba(246,246,246,1)), color-stop(100%, rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(135deg, rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff', GradientType=1 );
+    
+    margin: 0;
+    padding: 0.2em 2em 0.2em 2em;
+
+}
+
+.footnote-ref {
+    text-decoration: none !important;
+}
+
+.footnote-back {
+    text-decoration: none !important;
+}
+
+.toc-section-number {
+    &::after {
+        content: ".";
+    }
+}
+
+.header-section-number {
+    &::after {
+        content: ".";
+    }
+}
+
+/* ---------------------------------------------- */
