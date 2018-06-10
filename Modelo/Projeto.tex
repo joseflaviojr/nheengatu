@@ -1,5 +1,9 @@
 % Nheengatu - http://joseflavio.com/nheengatu/
+% Modelo de projeto de acordo com as normas da ABNT.
 % Modelo derivado de: https://github.com/jgm/pandoc-templates/blob/master/default.latex
+% Modelo derivado de: http://www.abntex.net.br/ -> abtex2-modelo-projeto-pesquisa.tex, v-1.9.6 laurocesar
+
+% --- (Pandoc + Nheengatu)
 \PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
 \PassOptionsToPackage{hyphens}{url}
 $if(colorlinks)$
@@ -7,7 +11,120 @@ $if(colorlinks)$
 $endif$$if(dir)$$if(latex-dir-rtl)$
 \PassOptionsToPackage{RTLdocument}{bidi}
 $endif$$endif$%
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$paper,$endif$$if(beamer)$ignorenonframetext,$if(handout)$handout,$endif$$if(aspectratio)$aspectratio=$aspectratio$,$endif$$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+% --- (Pandoc + Nheengatu)
+
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% para impressão em recto e verso. Oposto a oneside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	french,				% idioma adicional para hifenização
+	spanish,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	]{abntex2}
+
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+% ---
+
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+% \usepackage{lipsum}				% para geração de dummy text
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+% quote = citacao (abnTeX2)
+\def\quote{\citacao}
+\def\endquote{\endcitacao}
+
+% Numeração na LoF - específico para abnTeX2
+\renewcommand{\cftfigurename}{}
+\renewcommand*{\cftfigurepresnum}{(}
+\renewcommand*{\cftfigureaftersnum}{)}
+\setlength{\cftfigurenumwidth}{2em}
+
+% Numeração na LoT - específico para abnTeX2
+\renewcommand{\cfttablename}{}
+\renewcommand*{\cfttablepresnum}{(}
+\renewcommand*{\cfttableaftersnum}{)}
+\setlength{\cfttablenumwidth}{2em}
+
+% ---
+% Formato da Capa
+\renewcommand{\imprimircapa}{%
+  \begin{capa}%
+    \center
+    
+$if(marca)$
+    \begin{figure}
+    \centering
+    \includegraphics[width=$if(marca-tamanho)$$marca-tamanho$$else$0.2$endif$\textwidth,height=\textheight]{$marca$}
+    \end{figure}
+$else$
+    \imprimirinstituicao
+$endif$
+    
+    \vfill
+    
+    \begin{center}
+    \ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo
+    \end{center}
+    
+    \vfill
+    
+    \ABNTEXchapterfont\large\imprimirautor
+    
+    \vfill
+    
+    \large\imprimirlocal
+    
+    \large\imprimirdata
+    
+    \vspace*{1cm}
+  \end{capa}
+}
+% ---
+
+% --- (Pandoc + Nheengatu)
 $if(beamer)$
 $if(background-image)$
 \usebackgroundtemplate{%
@@ -165,9 +282,9 @@ $endif$
 $if(verbatim-in-note)$
 \VerbatimFootnotes % allows verbatim text in footnotes
 $endif$
-$if(geometry)$
-\usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
-$endif$
+% $if(geometry)$
+% \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
+% $endif$
 $if(beamer)$
 \newif\ifbibliography
 $endif$
@@ -296,21 +413,29 @@ $endif$
 \captionsetup[table]{labelformat=empty}
 
 % Numeração na LoF e na LoT
-\usepackage{tocloft}
-\renewcommand{\cftfigpresnum}{(}
-\renewcommand{\cftfigaftersnum}{)}
-\renewcommand{\cfttabpresnum}{(}
-\renewcommand{\cfttabaftersnum}{)}
+% \usepackage{tocloft}
+% \renewcommand{\cftfigpresnum}{(}
+% \renewcommand{\cftfigaftersnum}{)}
+% \renewcommand{\cfttabpresnum}{(}
+% \renewcommand{\cfttabaftersnum}{)}
 
 % Títulos
 $if(toc-title)$
 \renewcommand{\contentsname}{$toc-title$}
 $endif$
+\addto\captionsbrazil{ % abnTeX2
 $if(lof-title)$
 \renewcommand{\listfigurename}{$lof-title$}
 $endif$
 $if(lot-title)$
 \renewcommand{\listtablename}{$lot-title$}
+$endif$
+}
+$if(loa-title)$
+\renewcommand{\listadesiglasname}{$loa-title$} % abnTeX2
+$endif$
+$if(los-title)$
+\renewcommand{\listadesimbolosname}{$los-title$} % abnTeX2
 $endif$
 
 % URL - prefixo
@@ -368,72 +493,197 @@ $for(bibliography)$
 \addbibresource{$bibliography$}
 $endfor$
 $endif$
+% --- (Pandoc + Nheengatu)
 
-$if(title)$
-\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{$title$}
+\autor{$for(author)$$author$\\ $endfor$}
+\local{$localidade$}
+\data{$date$}
+\instituicao{%
+  $instituicao-nivel1$
+  \par
+  $instituicao-nivel2$
+  \par
+  $instituicao-nivel3$}
+\tipotrabalho{Projeto}
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+$if(preambulo)$
+\preambulo{$preambulo$}
 $endif$
-$if(subtitle)$
-\providecommand{\subtitle}[1]{}
-\subtitle{$subtitle$}
-$endif$
-$if(author)$
-\author{$for(author)$$author$$sep$ \and $endfor$}
-$endif$
-$if(institute)$
-\providecommand{\institute}[1]{}
-\institute{$for(institute)$$institute$$sep$ \and $endfor$}
-$endif$
-\date{$date$}
-$if(beamer)$
-$if(titlegraphic)$
-\titlegraphic{\includegraphics{$titlegraphic$}}
-$endif$
-$if(logo)$
-\logo{\includegraphics{$logo$}}
-$endif$
-$endif$
+% ---
 
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		% pdftitle={\@title}, 
+		% pdfauthor={\@author},
+    	% pdfsubject={\imprimirpreambulo},
+	    % pdfcreator={LaTeX with abnTeX2},
+		% pdfkeywords={abnt}{latex}{abntex}{abntex2}{projeto de pesquisa}, 
+		% colorlinks=true,       		% false: boxed links; true: colored links
+    	% linkcolor=blue,          	% color of internal links
+    	% citecolor=blue,        		% color of links to bibliography
+    	% filecolor=magenta,      		% color of file links
+		% urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ----
+% Início do documento
+% ----
 \begin{document}
-$if(title)$
-$if(beamer)$
-\frame{\titlepage}
-$else$
-\maketitle
-$endif$
-$if(abstract)$
-\begin{abstract}
-$abstract$
-\end{abstract}
-$endif$
-$endif$
 
-$for(include-before)$
-$include-before$
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
 
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+% ---
+% Folha de rosto
+% ---
+\imprimirfolhaderosto
+% ---
+
+% ---
+% NOTA DA ABNT NBR 15287:2011, p. 4:
+%  ``Se exigido pela entidade, apresentar os dados curriculares do autor em
+%     folha ou página distinta após a folha de rosto.''
+% ---
+
+% ---
+% inserir lista de ilustrações
+% ---
+$if(lof)$
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+$endif$
+% ---
+
+% ---
+% inserir lista de tabelas
+% ---
+$if(lot)$
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+$endif$
+% ---
+
+% ---
+% inserir lista de abreviaturas e siglas
+% ---
+$if(loa)$
+\begin{siglas}
+$for(siglas)$
+  \item[$siglas.sigla$] $siglas.descricao$
 $endfor$
+\end{siglas}
+$endif$
+% ---
+
+% ---
+% inserir lista de símbolos
+% ---
+$if(los)$
+\begin{simbolos}
+$for(simbolos)$
+  \item[$simbolos.simbolo$] $simbolos.descricao$
+$endfor$
+\end{simbolos}
+$endif$
+% ---
+
+% ---
+% inserir o sumario
+% ---
 $if(toc)$
-$if(beamer)$
-\begin{frame}
-\tableofcontents[hideallsubsections]
-\end{frame}
-$else$
-{
+\pdfbookmark[0]{\contentsname}{toc}
 $if(colorlinks)$
 \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$$endif$}
 $endif$
 \setcounter{tocdepth}{$toc-depth$}
-\tableofcontents
-}
+\tableofcontents*
+\cleardoublepage
 $endif$
-$endif$
-$if(lot)$
-\listoftables
-$endif$
-$if(lof)$
-\listoffigures
-$endif$
+% ---
+
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
 $body$
 
+% ---
+% Finaliza a parte no bookmark do PDF
+% para que se inicie o bookmark na raiz
+% e adiciona espaço de parte no Sumário
+% ---
+\phantompart
+
+% ---
+% Conclusão
+% ---
+% \chapter*[Considerações finais]{Considerações finais}
+% \addcontentsline{toc}{chapter}{Considerações finais}
+
+% \lipsum[31-33]
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+% \bibliography{Bibliografia}
+
+% --- (Pandoc + Nheengatu)
 $if(natbib)$
 $if(bibliography)$
 $if(biblio-title)$
@@ -465,8 +715,83 @@ $else$
 $endif$
 
 $endif$
-$for(include-after)$
-$include-after$
+% --- (Pandoc + Nheengatu)
 
-$endfor$
+% ----------------------------------------------------------
+% Glossário
+% ----------------------------------------------------------
+%
+% Consulte o manual da classe abntex2 para orientações sobre o glossário.
+%
+%\glossary
+
+% ----------------------------------------------------------
+% Apêndices
+% ----------------------------------------------------------
+
+% ---
+% Inicia os apêndices
+% ---
+% \begin{apendicesenv}
+
+% % Imprime uma página indicando o início dos apêndices
+% \partapendices
+
+% % ----------------------------------------------------------
+% \chapter{Quisque libero justo}
+% % ----------------------------------------------------------
+
+% \lipsum[50]
+
+% % ----------------------------------------------------------
+% \chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
+% ac pretium ante justo a nulla curabitur tristique arcu eu metus}
+% % ----------------------------------------------------------
+% \lipsum[55-57]
+
+% \end{apendicesenv}
+% ---
+
+
+% ----------------------------------------------------------
+% Anexos
+% ----------------------------------------------------------
+
+% ---
+% Inicia os anexos
+% ---
+% \begin{anexosenv}
+
+% % Imprime uma página indicando o início dos anexos
+% \partanexos
+
+% % ---
+% \chapter{Morbi ultrices rutrum lorem.}
+% % ---
+% \lipsum[30]
+
+% % ---
+% \chapter{Cras non urna sed feugiat cum sociis natoque penatibus et magnis dis
+% parturient montes nascetur ridiculus mus}
+% % ---
+
+% \lipsum[31]
+
+% % ---
+% \chapter{Fusce facilisis lacinia dui}
+% % ---
+
+% \lipsum[32]
+
+% \end{anexosenv}
+
+%---------------------------------------------------------------------
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+
+% \phantompart
+
+% \printindex
+
+
 \end{document}

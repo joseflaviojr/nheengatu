@@ -6,7 +6,7 @@ Mais detalhes em [http://joseflavio.com/nheengatu](http://joseflavio.com/nheenga
 
 ## Versão Atual
 
-1.0-A1
+1.0-A2
 
 Padrão de versionamento: [JFV](http://joseflavio.com/jfv)
 

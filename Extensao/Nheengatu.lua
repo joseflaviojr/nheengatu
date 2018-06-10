@@ -182,8 +182,8 @@ function _Div ( div )
     _SubstituirStr(div.content[1], "NN", codigos_total)
 
     if FORMAT == "latex" then
-      table.insert(div.content, 1, pandoc.RawBlock(FORMAT, "\\vspace{1em}\n\\begin{center}"))
-      table.insert(div.content, 3, pandoc.RawBlock(FORMAT, "\\end{center}"))
+      table.insert(div.content, 1, pandoc.RawBlock(FORMAT, "\\vspace{1em}\n{\\centering"))
+      table.insert(div.content, 3, pandoc.RawBlock(FORMAT, "}"))
       table.insert(div.content, pandoc.RawBlock(FORMAT, "\\vspace{0.5em}"))
     end
 
@@ -206,8 +206,9 @@ function _Div ( div )
     _SubstituirStr(div.content[1], "NN", equacoes_total)
 
     if FORMAT == "latex" then
-      table.insert(div.content, 1, pandoc.RawBlock(FORMAT, "\\vspace{1em}\n\\begin{center}"))
-      table.insert(div.content, 3, pandoc.RawBlock(FORMAT, "\\end{center}"))
+      table.insert(div.content, 1, pandoc.RawBlock(FORMAT, "\\vspace{1em}\n{\\centering"))
+      table.insert(div.content, 3, pandoc.RawBlock(FORMAT, "}"))
+      table.insert(div.content, pandoc.RawBlock(FORMAT, "\\vspace{1em}\n"))
     elseif variaveis["::embutir-equacoes::"] == "true" then
       div.content[2].content[1] = _Equacao_Embutida(math, equacoes_total)
     end
@@ -222,8 +223,15 @@ function _Div ( div )
   -- Destaque
   elseif _Contem(div.classes, "destaque") then
     if FORMAT == "latex" then
-      table.insert(div.content, 1, pandoc.RawBlock(FORMAT, "\\vspace{1em}\n\\begin{mdframed}[hidealllines=true,backgroundcolor=blue!7,roundcorner=5pt]"))
-      table.insert(div.content, pandoc.RawBlock(FORMAT, "\\end{mdframed}"))
+      table.insert(div.content, 1, pandoc.RawBlock(FORMAT, "\\vspace{1em}\n\\begin{mdframed}[hidealllines=true,backgroundcolor=blue!7,roundcorner=5pt]\n{\\parindent0pt\n"))
+      table.insert(div.content, pandoc.RawBlock(FORMAT, "}\n\\end{mdframed}"))
+    end
+
+  -- Referências
+  elseif div.attr[1] == "refs" then
+    if FORMAT == "latex" then
+      table.insert(div.content, 1, pandoc.RawBlock(FORMAT, "{\\parindent0pt"))
+      table.insert(div.content, pandoc.RawBlock(FORMAT, "}"))
     end
   end
 
@@ -287,6 +295,15 @@ function _Str ( str )
 
   return str
 
+end
+
+--- Função que faz a manutenção de objetos LineBlock da Pandoc.
+function _LineBlock ( lineblock )
+  if FORMAT == "latex" then
+    table.insert(lineblock.content, 1, { pandoc.RawInline(FORMAT, "{\\parindent0pt\n") })
+    table.insert(lineblock.content, { pandoc.RawInline(FORMAT, "}") })
+    return lineblock
+  end
 end
 
 --- Transformar em texto uma estrutura hierárquica de objetos.
@@ -374,4 +391,4 @@ function _Compativel_HTML ()
 end
 
 --- Ordem analítica da AST da Pandoc, conforme as necessidades do Nheengatu.
-return {{Meta = _Meta}, {Header = _Header}, {Image = _Image}, {Div = _Div}, {Math = _Math}, {Link = _Link}, {Str = _Str}}
+return {{Meta = _Meta}, {Header = _Header}, {Image = _Image}, {Div = _Div}, {Math = _Math}, {Link = _Link}, {Str = _Str}, {LineBlock = _LineBlock}}

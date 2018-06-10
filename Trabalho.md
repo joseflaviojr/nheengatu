@@ -1,39 +1,68 @@
 ---
 # Este documento está no formato Nheengatu - <http://joseflavio.com/nheengatu/>
-nheengatu: '1.0-A1' # Versão da Nheengatu
+nheengatu: '1.0-A2' # Versão da Nheengatu
 lang: 'pt-BR' # Idioma no formato https://tools.ietf.org/html/bcp47
 
 title: 'Publicação de trabalhos com Pandoc e Nheengatu'
 description: 'Exemplo de documento Pandoc utilizando Nheengatu.'
+keywords:
+- Markdown
+- Pandoc
+- Nheengatu
 
-author: # Listagem dos nomes dos autores
+author:
 - 'José Flávio de Souza Dias Júnior'
+- 'Amanda Jéssica Frazão da Silva Dias'
+
 rights: '© 2018 José Flávio de Souza Dias Júnior'
 publisher: 'Publicação independente'
-date: '2018-05-20' # Data da publicação, no formato https://www.w3.org/TR/NOTE-datetime
+date: '2018-06-10' # Data da publicação, no formato https://www.w3.org/TR/NOTE-datetime
 
-icone: 'Figura/Icone.ico' # Ícone que representa o documento
-cover-image: 'Figura/Capa.jpg' # Capa para livro eletrônico
-bibliography: 'Bibliografia.bibtex' # Banco de dados bibliográfico
-csl: 'Estilo/ABNT.csl' # Estilo de formatação das citações e da bibliografia
-link-citations: true # Criar link da citação para a bibliografia correspondente?
-embutir-equacoes: false # Embutir equações matemáticas como imagens sempre que possível?
+localidade: 'Tucuruí, Pará, Brasil'
+instituicao-nivel1: 'Instituição Nível Hierárquico 1'
+instituicao-nivel2: 'Instituição Nível Hierárquico 2'
+instituicao-nivel3: 'Instituição Nível Hierárquico 3'
 
 toc-title: 'Sumário'
 toc: true
-lof-title: 'Lista de Figuras'
-lof: false
-lot-title: 'Lista de Tabelas'
-lot: false
+lof-title: 'Lista de figuras'
+lof: true
+lot-title: 'Lista de tabelas'
+lot: true
+loa-title: 'Lista de abreviaturas e siglas'
+loa: true
+los-title: 'Lista de símbolos'
+los: true
+
+icone: 'Figura/Icone.ico' # Ícone que representa o documento
+marca: 'Figura/Marca.png' # Marca que representa o conteúdo ou o proprietário deste trabalho
+marca-tamanho: 0.2 # Tamanho padrão da marca (%)
+cover-image: 'Figura/Capa.jpg' # Capa para livro eletrônico
+
+bibliography: 'Bibliografia.bibtex' # Banco de dados bibliográfico
+csl: 'Estilo/ABNT.csl' # Estilo de formatação das citações e da bibliografia
+link-citations: true # Criar link da citação para a bibliografia correspondente?
+
+embutir-equacoes: false # Embutir equações matemáticas como imagens sempre que possível?
 
 papersize: 'A4'
 geometry: 'margin=2cm'
-links-as-notes: false
 
-teste: { # Objeto para fins de teste
-    texto: 'Objeto de Teste',
-    numero: 2.1
-}
+# Objeto para fins de testes
+teste: { texto: 'Objeto de Teste', numero: 2.1 }
+
+# Abreviaturas e siglas
+siglas:
+- { sigla: 'EPUB', descricao: 'Electronic Publication' }
+- { sigla: 'HTML', descricao: 'Hyper Text Markup Language' }
+- { sigla: 'PDF',  descricao: 'Portable Document Format' }
+
+# Símbolos
+simbolos:
+- { simbolo: '$\Delta$', descricao: 'Delta' }
+
+preambulo: 'Projeto apresentado à comunidade de software livre a fim de contribuir de forma significativa na construção de técnicas de publicação de trabalhos.'
+abstract: ''
 ---
 
 # Introdução {#introducao}
@@ -42,7 +71,11 @@ Este trabalho foi elaborado para demonstrar como é fácil escrever e formatar a
 
 [Pandoc] é uma adaptação da linguagem [Markdown][^nota-md], originalmente criada para possibilitar a criação de páginas [HTML] sem o uso intensivo de *tags* de marcação. A [Pandoc] integra também um conjunto de ferramentas para conversão entre diversos formatos de documentos.
 
-[Nheengatu] é uma extensão da [Pandoc], escrita na linguagem [Lua], que implementa diversos recursos indisponíveis na versão nativa da [Pandoc], como a numeração e referenciação personalizável de capítulos, figuras, tabelas, equações matemáticas e códigos fontes. A [Nheengatu] também tem o objetivo de padronizar a organização dos arquivos que compõem um trabalho completo de edição textual, facilitando a compreensão da estrutura e possibilitando a criação the *scripts* externos que complementem o comportamento natural da [Pandoc].
+:::::: {.destaque}
+A Nheengatu é software livre e todo o seu código fonte está disponível no repositório público **Github**: <https://github.com/joseflaviojr/nheengatu>
+::::::
+
+[Nheengatu] é uma extensão da [Pandoc], escrita na linguagem [Lua], que implementa diversos recursos indisponíveis na versão nativa da [Pandoc], como a numeração e referenciação personalizável de capítulos, figuras, tabelas, equações matemáticas e códigos fontes. A [Nheengatu] também tem o objetivo de padronizar a organização dos arquivos que compõem um trabalho completo de edição textual, facilitando a compreensão da estrutura e possibilitando a criação de *scripts* externos que complementem o comportamento natural da [Pandoc].
 
 Com base nisso, este trabalho visa demonstrar de forma prática os principais recursos da combinação [Pandoc] e [Nheengatu]. Aconselha-se comparar o conteúdo original deste documento, escrito ao estilo [Markdown], com os diversos produtos resultantes do processo de conversão, tais como [LaTeX], [PDF], [HTML] e [EPUB], a fim de aprender por similaridade para redigir neste formato suas próprias publicações.
 
@@ -50,15 +83,13 @@ Está disponível para fins de comparação alguns formatos deste mesmo trabalho
 
 * Original em **Markdown/Pandoc + Nheengatu**: <https://raw.githubusercontent.com/joseflaviojr/nheengatu/master/Trabalho.md>
 
-* Convertido para formato de impressão **PDF**: <http://joseflavio.com/nheengatu/Trabalho.pdf>
+* Convertido para formato de impressão **PDF**:
+  * <http://joseflavio.com/nheengatu/Trabalho-Projeto.pdf>
+  * <http://joseflavio.com/nheengatu/Trabalho.pdf>
 
 * Convertido para página Web **HTML**: <http://joseflavio.com/nheengatu>
 
 * Convertido para livro eletrônico **EPUB**: <http://joseflavio.com/nheengatu/Trabalho.epub>
-
-:::::: {.destaque}
-A Nheengatu é software livre e todo o seu código fonte está disponível no repositório público Github: <https://github.com/joseflaviojr/nheengatu>
-::::::
 
 [^nota-pandoc]: <https://pandoc.org/MANUAL.html#pandocs-markdown>
 [^nota-nheengatu]: <http://joseflavio.com/nheengatu/>
@@ -68,17 +99,18 @@ A Nheengatu é software livre e todo o seu código fonte está disponível no re
 
 Criar com [Nheengatu] um trabalho para publicação é bem simples:
 
-1. Baixe o modelo de projeto em <https://github.com/joseflaviojr/nheengatu/archive/1.0-A1.zip>, o qual atualmente está na versão `1.0-A1`.
+1. Baixe o modelo de projeto em <https://github.com/joseflaviojr/nheengatu/archive/1.0-A2.zip>, o qual atualmente está na versão `1.0-A2`.
 
-1. Descompacte `1.0-A1.zip` e renomeie o diretório resultante `nheengatu-1.0-A1`, o qual contém todos os arquivos que compõem um trabalho [Nheengatu].
+1. Descompacte `1.0-A2.zip` e renomeie o diretório resultante `nheengatu-1.0-A2`, o qual contém todos os arquivos que compõem um trabalho [Nheengatu].
 
 1. Edite o arquivo `Trabalho.md` redigindo o conteúdo que deseja publicar.
 
-1. Execute o comando `./Gerar-HTML.sh`{.sh} para gerar uma página [HTML] com conteúdo correspondente ao `Trabalho.md`. De fato, a [Nheengatu] processará todos os arquivos `*.md` presentes no diretório do projeto, considerando cada um como um trabalho independente.
+1. Execute o comando `./Gerar.sh html`{.sh} para gerar uma página [HTML] com conteúdo correspondente ao `Trabalho.md`. De fato, a [Nheengatu] processará todos os arquivos `*.md` presentes no diretório do projeto, considerando cada um como um trabalho independente.
 
 1. Outras opções de conversão:
-    * `./Gerar-LaTeX.sh`{.sh}
-    * `./Gerar-EPUB.sh`{.sh}
+    * `./Gerar.sh latex`{.sh}
+    * `./Gerar.sh epub`{.sh}
+    * `./Gerar.sh <nome de algum modelo disponível>`{.sh}
 
 ## Requisitos
 
@@ -316,6 +348,13 @@ O título deste trabalho é "::title::" e será impresso no tamanho **::papersiz
 
 O objeto de teste tem como valor de texto = "::teste::texto::" e número = ::teste::numero::!
 
+# Referências {-}
+
+:::::: {#refs}
+::::::
+
+Exemplo de parágrafo logo depois das referências.
+
 [CSL]: https://citationstyles.org/
 [EPUB]: https://pt.wikipedia.org/wiki/EPUB
 [HTML]: https://www.w3schools.com/html/html_intro.asp
@@ -325,5 +364,3 @@ O objeto de teste tem como valor de texto = "::teste::texto::" e número = ::tes
 [PDF]: https://pt.wikipedia.org/wiki/Portable_Document_Format
 [Markdown]: https://daringfireball.net/projects/markdown/
 [Nheengatu]: http://joseflavio.com/nheengatu/
-
-# Referências
