@@ -1,6 +1,6 @@
 ---
 # Este documento está no formato Nheengatu - <http://joseflavio.com/nheengatu/>
-nheengatu: '1.0-A2' # Versão da Nheengatu
+nheengatu: '1.0-A3' # Versão da Nheengatu
 lang: 'pt-BR' # Idioma no formato https://tools.ietf.org/html/bcp47
 
 title: 'Publicação de trabalhos com Pandoc e Nheengatu'
@@ -16,7 +16,7 @@ author:
 
 rights: '© 2018 José Flávio de Souza Dias Júnior'
 publisher: 'Publicação independente'
-date: '2018-06-10' # Data da publicação, no formato https://www.w3.org/TR/NOTE-datetime
+date: '2018-06-21' # Data da publicação, no formato https://www.w3.org/TR/NOTE-datetime
 
 localidade: 'Tucuruí, Pará, Brasil'
 instituicao-nivel1: 'Instituição Nível Hierárquico 1'
@@ -99,9 +99,9 @@ Está disponível para fins de comparação alguns formatos deste mesmo trabalho
 
 Criar com [Nheengatu] um trabalho para publicação é bem simples:
 
-1. Baixe o modelo de projeto em <https://github.com/joseflaviojr/nheengatu/archive/1.0-A2.zip>, o qual atualmente está na versão `1.0-A2`.
+1. Baixe o modelo de projeto em <https://github.com/joseflaviojr/nheengatu/archive/1.0-A3.zip>, o qual atualmente está na versão `1.0-A3`.
 
-1. Descompacte `1.0-A2.zip` e renomeie o diretório resultante `nheengatu-1.0-A2`, o qual contém todos os arquivos que compõem um trabalho [Nheengatu].
+1. Descompacte `1.0-A3.zip` e renomeie o diretório resultante `nheengatu-1.0-A3`, o qual contém todos os arquivos que compõem um trabalho [Nheengatu].
 
 1. Edite o arquivo `Trabalho.md` redigindo o conteúdo que deseja publicar.
 
