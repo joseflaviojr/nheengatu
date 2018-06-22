@@ -282,9 +282,9 @@ $endif$
 $if(verbatim-in-note)$
 \VerbatimFootnotes % allows verbatim text in footnotes
 $endif$
-% $if(geometry)$
-% \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
-% $endif$
+$-- $if(geometry)$
+$-- \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
+$-- $endif$
 $if(beamer)$
 \newif\ifbibliography
 $endif$
