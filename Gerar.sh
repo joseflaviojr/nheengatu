@@ -15,7 +15,6 @@ if [ "$1" == "html" ] || [ "$1" == "HTML" ] || [ "$1" == "HTML5" ]; then
             --toc --atx-headers --number-sections \
             --lua-filter=Extensao/Nheengatu.lua \
             --css Estilo/Nheengatu.css \
-            --mathjax \
             "$arq" -f markdown -t html5 -o "$novo"
         fi
     done
@@ -74,7 +73,7 @@ elif [ "$1" ]; then
 else
 
     echo ""
-    echo "Nheengatu 1.0-A3"
+    echo "Nheengatu 1.0-A4"
     echo ""
     echo "./Gerar.sh html | latex | epub | ..."
     echo "watch \"Gerar.sh html\""
