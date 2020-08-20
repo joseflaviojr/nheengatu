@@ -1,97 +1,222 @@
-@charset "UTF-8";
-/* ---------------------------------------------- */
-/*
-    Copyright (C) 2018 José Flávio de Souza Dias Júnior
-    This file is part of Nheengatu - <http://joseflavio.com/nheengatu/>.
-*/
 /* ---------------------------------------------- */
 /* ---------------------------------------------- */
-/*
-    Copyright (C) 2018 José Flávio de Souza Dias Júnior
-    This file is part of Nheengatu - <http://joseflavio.com/nheengatu/>.
-*/
+/* Tamanhos de telas de dispositivos */
 /* ---------------------------------------------- */
+@font-face {
+  font-family: "Titulo";
+  src: url("../Fonte/Merriweather/Merriweather-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titulo";
+  src: url("../Fonte/Merriweather/Merriweather-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titulo";
+  src: url("../Fonte/Merriweather/Merriweather-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+/* ---------------------------------------------- */
+@font-face {
+  font-family: "Texto";
+  src: url("../Fonte/OpenSans/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Texto";
+  src: url("../Fonte/OpenSans/OpenSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Texto";
+  src: url("../Fonte/OpenSans/OpenSans-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
 /* ---------------------------------------------- */
 body {
-  margin: 5%;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: justify; }
+  text-rendering: optimizeLegibility;
+  font-family: Texto, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  text-align: justify;
+  background-color: white;
+  color: #101112;
+}
+@media (max-width: 575.98px) {
+  body {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  body {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  body {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    margin: auto;
+    max-width: 680px;
+  }
+}
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 1.5em;
-  text-align: left; }
+  font-family: Titulo, Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  text-align: left;
+  font-weight: normal;
+}
+
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 
 em, em em em, em em em em em {
-  font-style: italic; }
+  font-style: italic;
+}
 
 em em, em em em em {
-  font-style: normal; }
+  font-style: normal;
+}
 
 a:link, a:visited, a:hover, a:active {
   color: inherit;
-  text-decoration: underline; }
+  text-decoration: underline;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
 
 header {
-  padding: 10px;
+  margin-top: 15%;
   margin-bottom: 2em;
-  border-top: 4px solid black;
-  border-bottom: 4px solid black;
-  text-align: center; }
-  header .title {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    text-align: center; }
-  header .author, header .date {
-    margin: 0;
-    text-align: center; }
+  text-align: center;
+  vertical-align: middle;
+}
+header .title {
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+header .author {
+  font-size: 0.8em;
+  text-align: right;
+  margin-top: 0;
+  margin-bottom: 0.2em;
+}
+header .author .photo {
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+header .author .web {
+  text-decoration: none;
+}
+header .date {
+  font-size: 0.8em;
+  text-align: right;
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
-#TOC ul {
-  margin-left: 1em;
-  padding: 0; }
-  #TOC ul li {
-    margin: 0;
-    padding: 0;
-    list-style-type: none; }
-    #TOC ul li a:link, #TOC ul li a:visited, #TOC ul li a:hover, #TOC ul li a:active {
-      text-decoration: none; }
+#TOC {
+  text-align: left;
+  padding-left: 5vw;
+}
+
+#TOC > ul, ol.toc {
+  margin: 0;
+  padding: 0;
+}
+#TOC > ul li, ol.toc li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+#TOC > ul li a:link, #TOC > ul li a:visited, #TOC > ul li a:hover, #TOC > ul li a:active, ol.toc li a:link, ol.toc li a:visited, ol.toc li a:hover, ol.toc li a:active {
+  text-decoration: none;
+}
+
+#toc-title {
+  font-size: 1.2em;
+}
 
 figure {
   margin: 2em auto;
-  text-align: center; }
-  figure img {
-    -webkit-box-shadow: 6px 6px 17px -7px rgba(0, 0, 0, 0.23);
-    -moz-box-shadow: 6px 6px 17px -7px rgba(0, 0, 0, 0.23);
-    box-shadow: 6px 6px 17px -7px rgba(0, 0, 0, 0.23); }
+  text-align: center;
+}
 
 table {
   min-width: 50%;
   margin: 2em auto;
   border-collapse: collapse;
-  border: 1px solid #b9b8b8; }
-  table th, table td {
-    padding: 5px;
-    border: 1px solid #b9b8b8; }
+  border: 1px solid #b9b8b8;
+}
+table th, table td {
+  padding: 5px;
+  border: 1px solid #b9b8b8;
+}
 
 .sourceCode-div {
   margin-top: 2em;
-  margin-bottom: 2em; }
-  .sourceCode-div p {
-    text-align: center; }
+  margin-bottom: 2em;
+}
+.sourceCode-div p {
+  text-align: center;
+}
 
-.sourceCode {
-  font-size: 106%; }
+pre > code.sourceCode {
+  font-size: 1em;
+}
+pre > code.sourceCode > span > a:first-child::before {
+  text-decoration: none;
+}
+
+pre.numberSource {
+  margin-left: 2.5em;
+}
 
 .math-div {
   margin-top: 2em;
-  margin-bottom: 2em; }
-  .math-div p {
-    text-align: center; }
+  margin-bottom: 2em;
+}
+.math-div p {
+  text-align: center;
+}
 
 blockquote {
   margin-top: 2em;
   margin-bottom: 2em;
   margin-left: 20%;
-  margin-right: 0; }
+  margin-right: 0;
+}
 
 .destaque {
   background: #ededed;
@@ -101,41 +226,67 @@ blockquote {
   background: -o-linear-gradient(-45deg, #ededed 0%, #f6f6f6 53%, white 100%);
   background: -ms-linear-gradient(-45deg, #ededed 0%, #f6f6f6 53%, white 100%);
   background: linear-gradient(135deg, #ededed 0%, #f6f6f6 53%, white 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff', GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#ededed", endColorstr="#ffffff", GradientType=1 );
   margin: 0;
-  padding: 0.2em 2em 0.2em 2em; }
+  padding: 0.2em 2em 0.2em 2em;
+  border-radius: 20px;
+}
 
 .footnote-ref {
-  text-decoration: none !important; }
+  text-decoration: none !important;
+}
 
 .footnote-back {
-  text-decoration: none !important; }
+  text-decoration: none !important;
+}
 
 .toc-section-number::after {
-  content: "."; }
+  content: ".";
+}
 
 .header-section-number::after {
-  content: "."; }
+  content: ".";
+}
+
+/* ---------------------------------------------- */
+/* mermaid */
+.cluster rect {
+  fill: #ffffff !important;
+  stroke: #ccd1d1 !important;
+  color: #111111 !important;
+}
+
+.edgePath .path {
+  stroke: #99a3a4 !important;
+}
+
+.arrowheadPath {
+  fill: #707b7c !important;
+}
+
+.label {
+  color: #111111 !important;
+}
+.label rect {
+  fill: #ffffff !important;
+}
+
+span.edgeLabel {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+}
 
 /* ---------------------------------------------- */
 /* ---------------------------------------------- */
 #cover, #cover-image {
   margin: 0;
   padding: 0;
-  text-align: center; }
-
-ol.toc {
-  margin-left: 1em;
-  padding: 0; }
-  ol.toc li {
-    margin: 0;
-    padding: 0;
-    list-style-type: none; }
-    ol.toc li a:link, ol.toc li a:visited, ol.toc li a:hover, ol.toc li a:active {
-      text-decoration: none; }
+  text-align: center;
+}
 
 .footnote-ref {
-  vertical-align: super; }
+  vertical-align: super;
+}
 
 /* ---------------------------------------------- */
 

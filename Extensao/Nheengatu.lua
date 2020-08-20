@@ -2,7 +2,7 @@
 --  
 --  Copyright (C) 2018 José Flávio de Souza Dias Júnior
 --  
---  This file is part of Nheengatu - <http://joseflavio.com/nheengatu/>.
+--  This file is part of Nheengatu - <https://joseflavio.com/nheengatu/>.
 --  
 --  Nheengatu is free software: you can redistribute it and/or modify
 --  it under the terms of the GNU Lesser General Public License as published by
@@ -21,7 +21,7 @@
 --  
 --  Direitos Autorais Reservados (C) 2018 José Flávio de Souza Dias Júnior
 --  
---  Este arquivo é parte de Nheengatu - <http://joseflavio.com/nheengatu/>.
+--  Este arquivo é parte de Nheengatu - <https://joseflavio.com/nheengatu/>.
 --  
 --  Nheengatu é software livre: você pode redistribuí-lo e/ou modificá-lo
 --  sob os termos da Licença Pública Menos Geral GNU conforme publicada pela

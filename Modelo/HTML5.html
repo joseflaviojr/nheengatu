@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Nheengatu - http://joseflavio.com/nheengatu/ -->
+<!-- Nheengatu - https://joseflavio.com/nheengatu/ -->
 <!-- Modelo derivado de: https://github.com/jgm/pandoc-templates/blob/master/default.html5 -->
 <html xmlns="http://www.w3.org/1999/xhtml" lang="$lang$" xml:lang="$lang$"$if(dir)$ dir="$dir$"$endif$>
 
@@ -10,9 +10,13 @@
   <meta name="description" content="$description$" />
   <meta name="generator" content="pandoc" />
   <meta name="robots" content="index, follow" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
-$for(author-meta)$
-  <meta name="author" content="$author-meta$" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+$for(author)$
+$if(author.name)$
+  <meta name="author" content="$author.name$" />
+$else$
+  <meta name="author" content="$author$" />
+$endif$
 $endfor$
 $if(date-meta)$
   <meta name="dcterms.date" content="$date-meta$" />
@@ -31,33 +35,15 @@ $endif$
 
   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
 
+  <!-- Estilo gráfico -->
   <link type="image/x-icon" href="$icone$" rel="shortcut icon" />
-
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-$if(quotes)$
-      q { quotes: "“" "”" "‘" "’"; }
-$endif$
+  <link href="Estilo/FontAwesome-all.css" rel="stylesheet" />
+  <style>
+    $styles.html()$
   </style>
-
-$if(highlighting-css)$
-  <style type="text/css">
-$highlighting-css$
-  </style>
-
-$endif$
 $for(css)$
   <link rel="stylesheet" href="$css$" />
 $endfor$
-$if(math)$
-  $math$
-$endif$
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 $for(header-includes)$
   $header-includes$
 $endfor$
@@ -70,21 +56,34 @@ $for(include-before)$
 $include-before$
 $endfor$
 $if(title)$
-<header>
+<header id="title-block-header">
 <h1 class="title">$title$</h1>
 $if(subtitle)$
 <p class="subtitle">$subtitle$</p>
 $endif$
 $for(author)$
-<p class="author">$author$</p>
+$if(author.name)$
+<p class="author">
+  <img class="photo" src="$author.photo$" />
+  <a class="name web" href="$author.web$" target="_blank">$author.name$</a>
+</p>
+$else$
+<p class="author">
+  <img class="photo" src="Figura/Pessoa.png" />
+  <span class="name">$author$</span>
+</p>
+$endif$
 $endfor$
 $if(date)$
-<p class="date">$date$</p>
+<p class="date">$date-long$</p>
 $endif$
 </header>
 $endif$
 $if(toc)$
-<nav id="$idprefix$TOC">
+<nav id="$idprefix$TOC" role="doc-toc">
+$if(toc-title)$
+<h2 id="$idprefix$toc-title">$toc-title$</h2>
+$endif$
 $table-of-contents$
 </nav>
 $endif$
@@ -92,6 +91,18 @@ $body$
 $for(include-after)$
 $include-after$
 $endfor$
+
+<!-- Scripts -->
+
+<script src="Extensao/mathjax-tex-mml-svg.js"></script>
+<script src="Extensao/mermaid.min.js"></script>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    securityLevel: 'loose'
+  });
+</script>
 
 </body>
 

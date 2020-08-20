@@ -1,4 +1,4 @@
-% Nheengatu - http://joseflavio.com/nheengatu/
+% Nheengatu - https://joseflavio.com/nheengatu/
 % Modelo derivado de: https://github.com/jgm/pandoc-templates/blob/master/default.latex
 \PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
 \PassOptionsToPackage{hyphens}{url}
@@ -383,7 +383,7 @@ $if(institute)$
 \providecommand{\institute}[1]{}
 \institute{$for(institute)$$institute$$sep$ \and $endfor$}
 $endif$
-\date{$date$}
+\date{$date-long$}
 $if(beamer)$
 $if(titlegraphic)$
 \titlegraphic{\includegraphics{$titlegraphic$}}

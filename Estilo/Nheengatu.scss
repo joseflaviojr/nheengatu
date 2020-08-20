@@ -1,25 +1,109 @@
 /* ---------------------------------------------- */
-/*
-    Copyright (C) 2018 José Flávio de Souza Dias Júnior
-    This file is part of Nheengatu - <http://joseflavio.com/nheengatu/>.
-*/
+
+/* Tamanhos de telas de dispositivos */
+
+$tela_pp: "(max-width: 575.98px)";
+$tela_p : "(min-width: 576px) and (max-width: 767.98px)";
+$tela_m : "(min-width: 768px) and (max-width: 991.98px)";
+$tela_g : "(min-width: 992px) and (max-width: 1199.98px)";
+$tela_gg: "(min-width: 1200px)";
+
 /* ---------------------------------------------- */
 
-$tela_p: "(min-width:    0px) and (max-width:  767px)";
-$tela_m: "(min-width:  768px) and (max-width: 1024px)";
-$tela_g: "(min-width: 1025px)";
+@font-face {
+    font-family: "Titulo";
+    src: url("../Fonte/Merriweather/Merriweather-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Titulo";
+    src: url("../Fonte/Merriweather/Merriweather-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Titulo";
+    src: url("../Fonte/Merriweather/Merriweather-Italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* ---------------------------------------------- */
+
+@font-face {
+    font-family: "Texto";
+    src: url("../Fonte/OpenSans/OpenSans-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Texto";
+    src: url("../Fonte/OpenSans/OpenSans-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Texto";
+    src: url("../Fonte/OpenSans/OpenSans-Italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
 
 /* ---------------------------------------------- */
 
 body {
-    margin: 5%;
-    font-family: Arial, Helvetica, sans-serif;
+    
+    text-rendering: optimizeLegibility;
+    font-family: Texto, Arial, Helvetica, sans-serif;
+    font-size: 18px;
     text-align: justify;
+    background-color: white;
+    color: #101112;
+
+    @media #{$tela_pp} {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    @media #{$tela_p} {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    @media #{$tela_m} {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    @media #{$tela_g} {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    @media #{$tela_gg} {
+        margin: auto;
+        max-width: 680px;
+    }
+
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin-top: 1.5em;
+    font-family: Titulo, Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
     text-align: left;
+    font-weight: normal;
+}
+
+p {
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 em, em em em, em em em em em {
@@ -35,61 +119,86 @@ a:link, a:visited, a:hover, a:active {
     text-decoration: underline;
 }
 
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
 header {
 
-    padding: 10px;
+    margin-top: 15%;
     margin-bottom: 2em;
-    border-top: 4px solid black;
-    border-bottom: 4px solid black;
     text-align: center;
+    vertical-align: middle;
 
     .title {
-        margin-top: 1em;
-        margin-bottom: 1em;
+        margin-bottom: 1.5em;
         text-align: center;
     }
     
-    .author, .date {
-        margin: 0;
-        text-align: center;
+    .author {
+
+        font-size: 0.8em;
+        text-align: right;
+        margin-top: 0;
+        margin-bottom: 0.2em;
+
+        .photo {
+            width: 30px;
+            border-radius: 50%;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+
+        .web {
+            text-decoration: none;
+        }
+
+    }
+
+    .date {
+        font-size: 0.8em;
+        text-align: right;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
 }
 
 #TOC {
-    
-    ul {
+    text-align: left;
+    padding-left: 5vw;
+}
 
-        margin-left: 1em;
+#TOC > ul, ol.toc {
+
+    margin: 0;
+    padding: 0;
+
+    li {
+        
+        margin: 0;
         padding: 0;
+        list-style-type: none;
 
-        li {
-            
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-
-            a:link, a:visited, a:hover, a:active {
-                text-decoration: none;
-            }
-
+        a:link, a:visited, a:hover, a:active {
+            text-decoration: none;
         }
 
     }
 
 }
 
+#toc-title {
+    font-size: 1.2em;
+}
+
 figure {
-    
     margin: 2em auto;
     text-align: center;
-
-    img {
-        -webkit-box-shadow: 6px 6px 17px -7px rgba(0,0,0,0.23);
-        -moz-box-shadow: 6px 6px 17px -7px rgba(0,0,0,0.23);
-        box-shadow: 6px 6px 17px -7px rgba(0,0,0,0.23);
-    }
-
 }
 
 table {
@@ -117,8 +226,16 @@ table {
 
 }
 
-.sourceCode {
-    font-size: 106%;
+pre > code.sourceCode {
+    
+    font-size: 1em;
+
+    & > span > a:first-child::before { text-decoration: none; }
+
+}
+
+pre.numberSource {
+    margin-left: 2.5em;
 }
 
 .math-div {
@@ -152,6 +269,7 @@ blockquote {
     
     margin: 0;
     padding: 0.2em 2em 0.2em 2em;
+    border-radius: 20px;
 
 }
 
@@ -173,6 +291,39 @@ blockquote {
     &::after {
         content: ".";
     }
+}
+
+/* ---------------------------------------------- */
+
+/* mermaid */
+
+.cluster rect {
+    fill: #ffffff !important;
+    stroke: #ccd1d1 !important;
+    color: #111111 !important;
+}
+
+.edgePath .path {
+    stroke: #99a3a4 !important;
+}
+
+.arrowheadPath {
+    fill: #707b7c !important;
+}
+
+.label {
+    
+    color: #111111 !important;
+
+    rect {
+        fill: #ffffff !important;
+    }
+    
+}
+
+span.edgeLabel {
+    background-color: #ffffff !important;
+    color: #111111 !important;
 }
 
 /* ---------------------------------------------- */

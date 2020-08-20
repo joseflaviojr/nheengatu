@@ -1,6 +1,6 @@
 ---
-# Este documento está no formato Nheengatu - <http://joseflavio.com/nheengatu/>
-nheengatu: '1.0-A3' # Versão da Nheengatu
+# Este documento está no formato Nheengatu - <https://joseflavio.com/nheengatu/>
+nheengatu: '1.0-A4' # Versão da Nheengatu
 lang: 'pt-BR' # Idioma no formato https://tools.ietf.org/html/bcp47
 
 title: 'Publicação de trabalhos com Pandoc e Nheengatu'
@@ -13,10 +13,15 @@ keywords:
 author:
 - 'José Flávio de Souza Dias Júnior'
 - 'Amanda Jéssica Frazão da Silva Dias'
+# - { name : 'José Flávio de Souza Dias Júnior',
+#     photo: 'Figura/Pessoa.png',
+#     web  : 'https://joseflavio.com',
+#     email: 'email@joseflavio.com' }
 
-rights: '© 2018 José Flávio de Souza Dias Júnior'
+rights: '© 2020 José Flávio de Souza Dias Júnior'
 publisher: 'Publicação independente'
-date: '2018-06-21' # Data da publicação, no formato https://www.w3.org/TR/NOTE-datetime
+date: '2020-08-19' # Data da publicação, no formato https://www.w3.org/TR/NOTE-datetime
+date-long: '19 de agosto de 2020'
 
 localidade: 'Tucuruí, Pará, Brasil'
 instituicao-nivel1: 'Instituição Nível Hierárquico 1'
@@ -75,7 +80,7 @@ Este trabalho foi elaborado para demonstrar como é fácil escrever e formatar a
 A Nheengatu é software livre e todo o seu código fonte está disponível no repositório público **Github**: <https://github.com/joseflaviojr/nheengatu>
 ::::::
 
-[Nheengatu] é uma extensão da [Pandoc], escrita na linguagem [Lua], que implementa diversos recursos indisponíveis na versão nativa da [Pandoc], como a numeração e referenciação personalizável de capítulos, figuras, tabelas, equações matemáticas e códigos fontes. A [Nheengatu] também tem o objetivo de padronizar a organização dos arquivos que compõem um trabalho completo de edição textual, facilitando a compreensão da estrutura e possibilitando a criação de *scripts* externos que complementem o comportamento natural da [Pandoc].
+[Nheengatu] é uma extensão da [Pandoc], escrita na linguagem [Lua], que implementa diversos recursos indisponíveis ou deficientes na versão nativa da [Pandoc], como a numeração e referenciação personalizável de capítulos, figuras, tabelas, equações matemáticas e códigos fontes. A [Nheengatu] também tem o objetivo de padronizar a organização dos arquivos que compõem um trabalho completo de edição textual, facilitando a compreensão da estrutura e possibilitando a criação de *scripts* externos que complementem o comportamento natural da [Pandoc].
 
 Com base nisso, este trabalho visa demonstrar de forma prática os principais recursos da combinação [Pandoc] e [Nheengatu]. Aconselha-se comparar o conteúdo original deste documento, escrito ao estilo [Markdown], com os diversos produtos resultantes do processo de conversão, tais como [LaTeX], [PDF], [HTML] e [EPUB], a fim de aprender por similaridade para redigir neste formato suas próprias publicações.
 
@@ -84,24 +89,24 @@ Está disponível para fins de comparação alguns formatos deste mesmo trabalho
 * Original em **Markdown/Pandoc + Nheengatu**: <https://raw.githubusercontent.com/joseflaviojr/nheengatu/master/Trabalho.md>
 
 * Convertido para formato de impressão **PDF**:
-  * <http://joseflavio.com/nheengatu/Trabalho-Projeto.pdf>
-  * <http://joseflavio.com/nheengatu/Trabalho.pdf>
+  * <https://joseflavio.com/nheengatu/Trabalho-Projeto.pdf>
+  * <https://joseflavio.com/nheengatu/Trabalho.pdf>
 
-* Convertido para página Web **HTML**: <http://joseflavio.com/nheengatu>
+* Convertido para página Web **HTML**: <https://joseflavio.com/nheengatu>
 
-* Convertido para livro eletrônico **EPUB**: <http://joseflavio.com/nheengatu/Trabalho.epub>
+* Convertido para livro eletrônico **EPUB**: <https://joseflavio.com/nheengatu/Trabalho.epub>
 
 [^nota-pandoc]: <https://pandoc.org/MANUAL.html#pandocs-markdown>
-[^nota-nheengatu]: <http://joseflavio.com/nheengatu/>
+[^nota-nheengatu]: <https://joseflavio.com/nheengatu/>
 [^nota-md]: <https://daringfireball.net/projects/markdown/>
 
 # Como utilizar a Nheengatu
 
 Criar com [Nheengatu] um trabalho para publicação é bem simples:
 
-1. Baixe o modelo de projeto em <https://github.com/joseflaviojr/nheengatu/archive/1.0-A3.zip>, o qual atualmente está na versão `1.0-A3`.
+1. Baixe o modelo de projeto em <https://github.com/joseflaviojr/nheengatu/archive/1.0-A4.zip>, o qual atualmente está na versão `1.0-A4`.
 
-1. Descompacte `1.0-A3.zip` e renomeie o diretório resultante `nheengatu-1.0-A3`, o qual contém todos os arquivos que compõem um trabalho [Nheengatu].
+1. Descompacte `1.0-A4.zip` e renomeie o diretório resultante `nheengatu-1.0-A4`, o qual contém todos os arquivos que compõem um trabalho [Nheengatu].
 
 1. Edite o arquivo `Trabalho.md` redigindo o conteúdo que deseja publicar.
 
@@ -126,7 +131,7 @@ Para o pleno funcionamento do processo de conversão de documentos é necessári
 
 A maioria das publicações é composta basicamente por capítulos e parágrafos, e na [Pandoc] a definição deles é feita na forma tradicional da [Markdown].
 
-Capítulos e subcapítulos são normalmente definidos através de linhas de texto prefixadas com o caractere `#`, sendo que a quantidade destes caracteres especificam em que nível está o capítulo. Acesse <https://pandoc.org/MANUAL.html#headers> para mais detalhes.
+Capítulos e subcapítulos são normalmente definidos através de linhas de texto prefixadas com o caractere `#`, sendo que a quantidade destes caracteres especificam em que nível está o capítulo. Acesse <https://pandoc.org/MANUAL.html#headings> para mais detalhes.
 
 Os parágrafos são definidos através de linhas textuais normais, exigindo-se apenas que os parágrafos sejam separados por linhas em branco, como especificado em <https://pandoc.org/MANUAL.html#paragraphs>.
 
@@ -170,6 +175,51 @@ A [Figura NN](#FigCapa) exemplifica inserção, numeração, rotulação, dimens
 O local padrão de armazenamento de arquivos de imagens é no subdiretório `Figura` do projeto de publicação.
 
 ![**Figura NN.** Capa deste trabalho no formato de livro eletrônico.](Figura/Capa.jpg){#FigCapa width=30%}
+
+# Diagrama
+
+Uma das melhores formas de representar e explorar pensamentos, ideias e conhecimentos é através de diagramas, por isso, recomenda-se utilizar diagramas em todas as fases de um trabalho, principalmente no início, mesmo quando o contexto e o escopo ainda não tenham sido claramente definidos.
+
+Um diagrama consiste, de fato, em uma [Figura](#figura), contudo, como alternativa rápida de composição, a [Nheengatu] possibilita a construção de diagramas através de uma linguagem textual, disponível através da ferramenta [mermaid](https://mermaid-js.github.io/mermaid/#/flowchart?id=graph), já embutida na Nheengatu no âmbito da HTML. Demonstra-se, a seguir, um exemplo abrangente de fluxograma.
+
+:::::: {.destaque}
+Diagramas [mermaid](https://mermaid-js.github.io/mermaid/#/flowchart?id=graph) estão disponíveis apenas para HTML.
+::::::
+
+<pre class="mermaid">
+
+graph TB
+    
+    %% Comentário
+    inicio[Início]:::aten --> meio
+    fim([Fim far:fa-check-circle .]):::aten
+    
+    subgraph subg1 [Subgrafo 1]
+        meio(Meio):::aten --> duvida{Dúvida}
+        meio -.- nota>Manual da linguagem]:::norm
+        click nota "https://mermaid-js.github.io/mermaid/#/flowchart?id=graph" "Manual da linguagem de diagrama mermaid."
+    end
+
+    subgraph subg2 [Subgrafo 2]
+        a[AAA] -.-|armazena em| b[(BBB)]
+        a ==> c((CCC))
+        recurso[/Recurso/] -.-> c
+        c --- d(DDD)
+    end
+
+    %% Inter-relações
+    duvida -->|Sim| a
+    duvida -->|Não| fim
+    c --> fim
+
+    %% Estilo
+    classDef default fill:#d6eaf8,stroke:#0074d9,color:#111111,stroke-width:1px;
+    classDef norm    fill:#d6eaf8,stroke:#0074d9,color:#111111,stroke-width:1px;
+    classDef aten    fill:#fadbd8,stroke:#ff4136,color:#111111,stroke-width:1px;
+
+</pre>
+
+Orientações de fluxo mais comuns para fluxogramas mermaid: **TB** (top to bottom) ou **LR** (left to right).
 
 # Tabela
 
@@ -230,7 +280,7 @@ A indicação da `linguagem de programação` não é exigida em todos os casos.
 
 # Citação
 
-Citações de trabalhos de terceiros requerem bancos de dados bibliográficos, como o popular [BibTeX](http://www.bibtex.org/), padrão utilizado pelo [LaTeX], o qual é representado neste projeto pelo arquivo `Bibliografia.bibtex`. A montagem manual deste tipo de arquivo pode ser feita através de serviços *online* como o <http://truben.no/latex/bibtex/>, contudo, normalmente se buscam versões já prontas em repositórios de citações, como o <http://www.citeulike.org/>.
+Citações de trabalhos de terceiros requerem bancos de dados bibliográficos, como o popular [BibTeX](http://www.bibtex.org/), padrão utilizado pelo [LaTeX], o qual é representado neste projeto pelo arquivo `Bibliografia.bibtex`. A montagem manual deste tipo de arquivo pode ser feita através de serviços *online* como o <http://truben.no/latex/bibtex/>, contudo, normalmente se buscam versões já prontas em repositórios de citações, como o <https://www.mendeley.com/search/?query=>.
 
 Após a completa especificação do banco de dados bibliográfico, basta realizar citações como: Segundo @Biblia, Jesus escolheu 12 discípulos...
 
@@ -363,4 +413,4 @@ Exemplo de parágrafo logo depois das referências.
 [Pandoc]: https://pandoc.org/MANUAL.html#pandocs-markdown
 [PDF]: https://pt.wikipedia.org/wiki/Portable_Document_Format
 [Markdown]: https://daringfireball.net/projects/markdown/
-[Nheengatu]: http://joseflavio.com/nheengatu/
+[Nheengatu]: https://joseflavio.com/nheengatu/
