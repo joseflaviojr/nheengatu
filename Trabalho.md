@@ -1,6 +1,6 @@
 ---
 # Este documento está no formato Nheengatu - <https://joseflavio.com/nheengatu/>
-nheengatu: '1.0-A4' # Versão da Nheengatu
+nheengatu: '1.0-A5' # Versão da Nheengatu
 lang: 'pt-BR' # Idioma no formato https://tools.ietf.org/html/bcp47
 
 title: 'Publicação de trabalhos com Pandoc e Nheengatu'
@@ -104,9 +104,9 @@ Está disponível para fins de comparação alguns formatos deste mesmo trabalho
 
 Criar com [Nheengatu] um trabalho para publicação é bem simples:
 
-1. Baixe o modelo de projeto em <https://github.com/joseflaviojr/nheengatu/archive/1.0-A4.zip>, o qual atualmente está na versão `1.0-A4`.
+1. Baixe o modelo de projeto em <https://github.com/joseflaviojr/nheengatu/archive/1.0-A5.zip>, o qual atualmente está na versão `1.0-A5`.
 
-1. Descompacte `1.0-A4.zip` e renomeie o diretório resultante `nheengatu-1.0-A4`, o qual contém todos os arquivos que compõem um trabalho [Nheengatu].
+1. Descompacte `1.0-A5.zip` e renomeie o diretório resultante `nheengatu-1.0-A5`, o qual contém todos os arquivos que compõem um trabalho [Nheengatu].
 
 1. Edite o arquivo `Trabalho.md` redigindo o conteúdo que deseja publicar.
 
@@ -122,8 +122,6 @@ Criar com [Nheengatu] um trabalho para publicação é bem simples:
 Para o pleno funcionamento do processo de conversão de documentos é necessária a instalação das seguintes ferramentas:
 
 * [Pandoc - universal document converter](https://pandoc.org/installing.html): sistema base para a conversão de documentos - <https://pandoc.org/installing.html>.
-
-* [pandoc-citeproc](https://github.com/jgm/pandoc-citeproc/blob/master/man/pandoc-citeproc.1.md): extensão da Pandoc que otimiza a técnica de citação de trabalhos de terceiros - <https://github.com/jgm/pandoc-citeproc/blob/master/man/pandoc-citeproc.1.md>.
 
 * [curl](https://curl.haxx.se/): ferramenta para download de arquivos da Internet, necessária caso deseje embutir equações matemáticas na forma de imagens - <https://curl.haxx.se/>.
 
