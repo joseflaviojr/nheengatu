@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if [ "$1" == "html" ] || [ "$1" == "HTML" ] || [ "$1" == "HTML5" ]; then
+sass --update Estilo:Estilo
 
-    sass --update Estilo/Nheengatu.scss Estilo/Nheengatu.css
+if [ "$1" == "html" ] || [ "$1" == "HTML" ] || [ "$1" == "HTML5" ]; then
 
     find . -name "*.md" ! -name "README.md" |
     while read arq; do
@@ -36,8 +36,6 @@ elif [ "$1" == "tex" ] || [ "$1" == "latex" ] || [ "$1" == "LaTeX" ]; then
     done
 
 elif [ "$1" == "epub" ] || [ "$1" == "EPUB" ] || [ "$1" == "EPUB3" ]; then
-
-    sass --update Estilo/Nheengatu-EPUB.scss Estilo/Nheengatu-EPUB.css
 
     find . -name "*.md" ! -name "README.md" |
     while read arq; do
