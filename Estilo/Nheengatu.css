@@ -92,6 +92,10 @@ p {
   margin-bottom: 1em;
 }
 
+ul {
+  list-style-type: disc;
+}
+
 em, em em em, em em em em em {
   font-style: italic;
 }
