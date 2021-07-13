@@ -1,6 +1,6 @@
 --  ---------------------------------------------------------------------------
 --  
---  Copyright (C) 2018 José Flávio de Souza Dias Júnior
+--  Copyright (C) 2018-2021 José Flávio de Souza Dias Júnior
 --  
 --  This file is part of Nheengatu - <https://joseflavio.com/nheengatu/>.
 --  
@@ -19,7 +19,7 @@
 --  
 --  ---------------------------------------------------------------------------
 --  
---  Direitos Autorais Reservados (C) 2018 José Flávio de Souza Dias Júnior
+--  Direitos Autorais Reservados (C) 2018-2021 José Flávio de Souza Dias Júnior
 --  
 --  Este arquivo é parte de Nheengatu - <https://joseflavio.com/nheengatu/>.
 --  

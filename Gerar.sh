@@ -75,7 +75,7 @@ elif [ "$1" ]; then
 else
 
     echo ""
-    echo "Nheengatu 1.0-A5"
+    echo "Nheengatu 1.0-A6"
     echo ""
     echo "./Gerar.sh html | latex | epub | ..."
     echo "watch \"Gerar.sh html\""
