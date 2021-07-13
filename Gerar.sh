@@ -15,6 +15,7 @@ if [ "$1" == "html" ] || [ "$1" == "HTML" ] || [ "$1" == "HTML5" ]; then
             --toc --markdown-headings=atx --number-sections \
             --lua-filter=Extensao/Nheengatu.lua \
             --css Estilo/Nheengatu.css \
+            --highlight-style=monochrome \
             "$arq" -f markdown -t html5 -o "$novo"
         fi
     done
@@ -31,6 +32,7 @@ elif [ "$1" == "tex" ] || [ "$1" == "latex" ] || [ "$1" == "LaTeX" ]; then
             --citeproc \
             --markdown-headings=atx --number-sections --top-level-division=section \
             --lua-filter=Extensao/Nheengatu.lua \
+            --highlight-style=monochrome \
             "$arq" -f markdown -t latex -o "$novo"
         fi
     done
@@ -48,6 +50,7 @@ elif [ "$1" == "epub" ] || [ "$1" == "EPUB" ] || [ "$1" == "EPUB3" ]; then
             --toc --markdown-headings=atx --number-sections \
             --lua-filter=Extensao/Nheengatu.lua \
             --css Estilo/Nheengatu-EPUB.css \
+            --highlight-style=monochrome \
             "$arq" -f markdown -t epub -o "$novo"
         fi
     done
@@ -64,6 +67,7 @@ elif [ "$1" ]; then
             --citeproc \
             --markdown-headings=atx --number-sections --top-level-division=chapter \
             --lua-filter=Extensao/Nheengatu.lua \
+            --highlight-style=monochrome \
             "$arq" -f markdown -t latex -o "$novo"
         fi
     done
