@@ -1,0 +1,60 @@
+/* ---------------------------------------------- */
+
+@import "Nheengatu.scss";
+
+/* ---------------------------------------------- */
+
+$cor1: #272b30;
+$cor2: #aaa;
+$cor3: #2c3036;
+
+/* ---------------------------------------------- */
+
+body {
+    background-color: $cor1;
+    color: $cor2;
+}
+
+hr {
+    background-image: linear-gradient(to right, $cor1, $cor2, $cor1);
+}
+
+.destaque {
+    background: $cor3;
+    color: $cor2;
+}
+
+/* ---------------------------------------------- */
+
+/* mermaid */
+
+.cluster rect {
+    fill: $cor1 !important;
+    stroke: $cor2 !important;
+    color: $cor2 !important;
+}
+
+.edgePath .path {
+    stroke: $cor2 !important;
+}
+
+.arrowheadPath {
+    fill: $cor2 !important;
+}
+
+.label {
+    
+    color: $cor2 !important;
+
+    rect {
+        fill: $cor1 !important;
+    }
+    
+}
+
+span.edgeLabel {
+    background-color: $cor1 !important;
+    color: $cor2 !important;
+}
+
+/* ---------------------------------------------- */

@@ -1,0 +1,330 @@
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* Tamanhos de telas de dispositivos */
+/* ---------------------------------------------- */
+@font-face {
+  font-family: "Titulo";
+  src: url("../Fonte/Merriweather/Merriweather-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titulo";
+  src: url("../Fonte/Merriweather/Merriweather-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titulo";
+  src: url("../Fonte/Merriweather/Merriweather-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+/* ---------------------------------------------- */
+@font-face {
+  font-family: "Texto";
+  src: url("../Fonte/OpenSans/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Texto";
+  src: url("../Fonte/OpenSans/OpenSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Texto";
+  src: url("../Fonte/OpenSans/OpenSans-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+/* ---------------------------------------------- */
+body {
+  text-rendering: optimizeLegibility;
+  font-family: Texto, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  text-align: justify;
+  background-color: white;
+  color: #101112;
+}
+@media (max-width: 575.98px) {
+  body {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  body {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  body {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    margin: auto;
+    max-width: 680px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Titulo, Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  text-align: left;
+  font-weight: normal;
+}
+
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+em, em em em, em em em em em {
+  font-style: italic;
+}
+
+em em, em em em em {
+  font-style: normal;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: inherit;
+  text-decoration: underline;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+header {
+  margin-top: 15%;
+  margin-bottom: 2em;
+  text-align: center;
+  vertical-align: middle;
+}
+header .title {
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+header .author {
+  font-size: 0.8em;
+  text-align: right;
+  margin-top: 0;
+  margin-bottom: 0.2em;
+}
+header .author .photo {
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+header .author .web {
+  text-decoration: none;
+}
+header .date {
+  font-size: 0.8em;
+  text-align: right;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#TOC {
+  text-align: left;
+  padding-left: 5vw;
+}
+
+#TOC > ul, ol.toc {
+  margin: 0;
+  padding: 0;
+}
+#TOC > ul li, ol.toc li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+#TOC > ul li a:link, #TOC > ul li a:visited, #TOC > ul li a:hover, #TOC > ul li a:active, ol.toc li a:link, ol.toc li a:visited, ol.toc li a:hover, ol.toc li a:active {
+  text-decoration: none;
+}
+
+#toc-title {
+  font-size: 1.2em;
+}
+
+figure {
+  margin: 2em auto;
+  text-align: center;
+}
+
+table {
+  min-width: 50%;
+  margin: 2em auto;
+  border-collapse: collapse;
+  border: 1px solid #b9b8b8;
+}
+table th, table td {
+  padding: 5px;
+  border: 1px solid #b9b8b8;
+}
+
+.sourceCode-div {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.sourceCode-div p {
+  text-align: center;
+}
+
+pre > code.sourceCode {
+  font-size: 1em;
+}
+pre > code.sourceCode > span > a:first-child::before {
+  text-decoration: none;
+}
+
+pre.numberSource {
+  margin-left: 2.5em;
+}
+
+.math-div {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.math-div p {
+  text-align: center;
+}
+
+blockquote {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 20%;
+  margin-right: 0;
+}
+
+.destaque {
+  background: #ededed;
+  background: -moz-linear-gradient(-45deg, #ededed 0%, #f6f6f6 53%, white 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, #ededed), color-stop(53%, #f6f6f6), color-stop(100%, white));
+  background: -webkit-linear-gradient(-45deg, #ededed 0%, #f6f6f6 53%, white 100%);
+  background: -o-linear-gradient(-45deg, #ededed 0%, #f6f6f6 53%, white 100%);
+  background: -ms-linear-gradient(-45deg, #ededed 0%, #f6f6f6 53%, white 100%);
+  background: linear-gradient(135deg, #ededed 0%, #f6f6f6 53%, white 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#ededed", endColorstr="#ffffff", GradientType=1 );
+  margin: 0;
+  padding: 0.2em 2em 0.2em 2em;
+  border-radius: 20px;
+}
+
+.footnote-ref {
+  text-decoration: none !important;
+}
+
+.footnote-back {
+  text-decoration: none !important;
+}
+
+.toc-section-number::after {
+  content: ".";
+}
+
+.header-section-number::after {
+  content: ".";
+}
+
+/* ---------------------------------------------- */
+/* mermaid */
+.cluster rect {
+  fill: #ffffff !important;
+  stroke: #ccd1d1 !important;
+  color: #111111 !important;
+}
+
+.edgePath .path {
+  stroke: #99a3a4 !important;
+}
+
+.arrowheadPath {
+  fill: #707b7c !important;
+}
+
+.label {
+  color: #111111 !important;
+}
+.label rect {
+  fill: #ffffff !important;
+}
+
+span.edgeLabel {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+}
+
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+body {
+  background-color: #272b30;
+  color: #aaa;
+}
+
+hr {
+  background-image: linear-gradient(to right, #272b30, #aaa, #272b30);
+}
+
+.destaque {
+  background: #2c3036;
+  color: #aaa;
+}
+
+/* ---------------------------------------------- */
+/* mermaid */
+.cluster rect {
+  fill: #272b30 !important;
+  stroke: #aaa !important;
+  color: #aaa !important;
+}
+
+.edgePath .path {
+  stroke: #aaa !important;
+}
+
+.arrowheadPath {
+  fill: #aaa !important;
+}
+
+.label {
+  color: #aaa !important;
+}
+.label rect {
+  fill: #272b30 !important;
+}
+
+span.edgeLabel {
+  background-color: #272b30 !important;
+  color: #aaa !important;
+}
+
+/* ---------------------------------------------- */
+
+/*# sourceMappingURL=Nheengatu-Escuro.css.map */
