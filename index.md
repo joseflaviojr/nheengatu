@@ -228,6 +228,11 @@ Table: **Tabela NN.** Exemplo de tabela de dados com alinhamento de colunas.
 
 ::::::
 
+Existem alternativas interessantes que auxiliam na composição de tabelas:
+
+* [Tables Generator](http://www.tablesgenerator.com/markdown_tables)
+* [Pantable](https://github.com/ickc/pantable)
+* [Pandoc csv2table Filter](https://github.com/baig/pandoc-csv2table)
 
 # Equação matemática
 
