@@ -1,6 +1,5 @@
 ---
 # Este documento está no formato Nheengatu - <https://joseflavio.com/nheengatu/>
-nheengatu: '1.0-A5' # Versão da Nheengatu
 lang: 'pt-BR' # Idioma no formato https://tools.ietf.org/html/bcp47
 
 title: 'Publicação de trabalhos com Pandoc e Nheengatu'
@@ -12,7 +11,6 @@ keywords:
 
 author:
 - 'José Flávio de Souza Dias Júnior'
-- 'Amanda Jéssica Frazão da Silva Dias'
 # - { name : 'José Flávio de Souza Dias Júnior',
 #     photo: 'Figura/Pessoa.png',
 #     web  : 'https://joseflavio.com',
@@ -20,8 +18,6 @@ author:
 
 rights: '© 2020 José Flávio de Souza Dias Júnior'
 publisher: 'Publicação independente'
-date: '2020-08-19' # Data da publicação, no formato https://www.w3.org/TR/NOTE-datetime
-date-long: '19 de agosto de 2020'
 
 localidade: 'Tucuruí, Pará, Brasil'
 instituicao-nivel1: 'Instituição Nível Hierárquico 1'
@@ -86,15 +82,15 @@ Com base nisso, este trabalho visa demonstrar de forma prática os principais re
 
 Está disponível para fins de comparação alguns formatos deste mesmo trabalho:
 
-* Original em **Markdown/Pandoc + Nheengatu**: <https://raw.githubusercontent.com/joseflaviojr/nheengatu/master/Trabalho.md>
+* Original em **Markdown/Pandoc + Nheengatu**: <https://raw.githubusercontent.com/joseflaviojr/nheengatu/master/index.md>
 
 * Convertido para formato de impressão **PDF**:
-  * <https://joseflavio.com/nheengatu/Trabalho-Projeto.pdf>
-  * <https://joseflavio.com/nheengatu/Trabalho.pdf>
+  * <https://joseflavio.com/nheengatu/index-Projeto.pdf>
+  * <https://joseflavio.com/nheengatu/index.pdf>
 
 * Convertido para página Web **HTML**: <https://joseflavio.com/nheengatu>
 
-* Convertido para livro eletrônico **EPUB**: <https://joseflavio.com/nheengatu/Trabalho.epub>
+* Convertido para livro eletrônico **EPUB**: <https://joseflavio.com/nheengatu/index.epub>
 
 [^nota-pandoc]: <https://pandoc.org/MANUAL.html#pandocs-markdown>
 [^nota-nheengatu]: <https://joseflavio.com/nheengatu/>
@@ -104,13 +100,11 @@ Está disponível para fins de comparação alguns formatos deste mesmo trabalho
 
 Criar com [Nheengatu] um trabalho para publicação é bem simples:
 
-1. Baixe o modelo de projeto em <https://github.com/joseflaviojr/nheengatu/archive/1.0-A5.zip>, o qual atualmente está na versão `1.0-A5`.
 
-1. Descompacte `1.0-A5.zip` e renomeie o diretório resultante `nheengatu-1.0-A5`, o qual contém todos os arquivos que compõem um trabalho [Nheengatu].
 
-1. Edite o arquivo `Trabalho.md` redigindo o conteúdo que deseja publicar.
+1. Edite o arquivo `index.md` redigindo o conteúdo que deseja publicar.
 
-1. Execute o comando `./Gerar.sh html`{.sh} para gerar uma página [HTML] com conteúdo correspondente ao `Trabalho.md`. De fato, a [Nheengatu] processará todos os arquivos `*.md` presentes no diretório do projeto, considerando cada um como um trabalho independente.
+1. Execute o comando `./Gerar.sh html`{.sh} para gerar uma página [HTML] com conteúdo correspondente ao `index.md`. De fato, a [Nheengatu] processará todos os arquivos `*.md` presentes no diretório do projeto, considerando cada um como um trabalho independente.
 
 1. Outras opções de conversão:
     * `./Gerar.sh latex`{.sh}
@@ -234,9 +228,6 @@ Table: **Tabela NN.** Exemplo de tabela de dados com alinhamento de colunas.
 
 ::::::
 
-:::::: {.destaque}
-A ferramenta <http://www.tablesgenerator.com/markdown_tables> fornece uma interface gráfica para criação de tabelas.
-::::::
 
 # Equação matemática
 
