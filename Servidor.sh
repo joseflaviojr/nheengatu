@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Servidor Web - http://localhost:1111/
-python -m SimpleHTTPServer 1111 &
+python2 -m SimpleHTTPServer 1111 &
 PIDS[0]=$!
 
 # Nheengatu

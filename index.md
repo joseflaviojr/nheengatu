@@ -17,7 +17,7 @@ author:
 #     web  : 'https://joseflavio.com',
 #     email: 'email@joseflavio.com' }
 
-rights: '© 2020 José Flávio de Souza Dias Júnior'
+rights: '© 2021 José Flávio de Souza Dias Júnior'
 publisher: 'Publicação independente'
 date: '2021-07-12' # Data da publicação, no formato https://www.w3.org/TR/NOTE-datetime
 date-long: '12 de julho de 2021'
