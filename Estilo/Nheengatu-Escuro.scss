@@ -6,7 +6,7 @@
 
 $cor1: #272b30;
 $cor2: #aaa;
-$cor3: #2c3036;
+$cor3: #1f2020;
 
 /* ---------------------------------------------- */
 
@@ -30,7 +30,7 @@ hr {
 
 .cluster rect {
     fill: $cor1 !important;
-    stroke: $cor2 !important;
+    stroke: black !important;
     color: $cor2 !important;
 }
 
@@ -43,18 +43,29 @@ hr {
 }
 
 .label {
-    
     color: $cor2 !important;
-
     rect {
         fill: $cor1 !important;
     }
-    
 }
 
 span.edgeLabel {
     background-color: $cor1 !important;
     color: $cor2 !important;
+}
+
+.node .label-container {
+    fill: $cor3 !important;
+    stroke: black !important;
+    color: $cor2 !important;
+    stroke-width: 1px !important;
+}
+
+.node.atencao .label-container {
+    fill: $cor3 !important;
+    stroke: #f1c232 !important;
+    color: #f1c232 !important;
+    stroke-width: 1px !important;
 }
 
 /* ---------------------------------------------- */

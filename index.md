@@ -188,12 +188,12 @@ Diagramas [mermaid](https://mermaid-js.github.io/mermaid/#/flowchart?id=graph) e
 graph TB
     
     %% Comentário
-    inicio[Início]:::aten --> meio
-    fim([Fim far:fa-check-circle .]):::aten
+    inicio[Início] --> meio
+    fim([Fim far:fa-check-circle .]):::atencao
     
     subgraph subg1 [Subgrafo 1]
-        meio(Meio):::aten --> duvida{Dúvida}
-        meio -.- nota>Manual da linguagem]:::norm
+        meio(Meio) --> duvida{Dúvida}:::classe-espec
+        meio -.- nota>Manual da linguagem]
         click nota "https://mermaid-js.github.io/mermaid/#/flowchart?id=graph" "Manual da linguagem de diagrama mermaid."
     end
 
@@ -210,9 +210,7 @@ graph TB
     c --> fim
 
     %% Estilo
-    classDef default fill:#d6eaf8,stroke:#0074d9,color:#111111,stroke-width:1px;
-    classDef norm    fill:#d6eaf8,stroke:#0074d9,color:#111111,stroke-width:1px;
-    classDef aten    fill:#fadbd8,stroke:#ff4136,color:#111111,stroke-width:1px;
+    classDef classe-espec fill:#fadbd8,stroke:#ff4136,color:#111111,stroke-width:1px;
 
 </pre>
 

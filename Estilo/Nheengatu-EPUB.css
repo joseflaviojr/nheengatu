@@ -40,6 +40,7 @@
   font-style: italic;
 }
 /* ---------------------------------------------- */
+/* ---------------------------------------------- */
 body {
   text-rendering: optimizeLegibility;
   font-family: Texto, Arial, Helvetica, sans-serif;
@@ -108,6 +109,10 @@ em em, em em em em {
 a:link, a:visited, a:hover, a:active {
   color: inherit;
   text-decoration: underline;
+}
+
+del {
+  opacity: 0.2;
 }
 
 hr {
@@ -255,29 +260,43 @@ blockquote {
 /* ---------------------------------------------- */
 /* mermaid */
 .cluster rect {
-  fill: #ffffff !important;
+  fill: white !important;
   stroke: #ccd1d1 !important;
-  color: #111111 !important;
+  color: #101112 !important;
 }
 
 .edgePath .path {
-  stroke: #99a3a4 !important;
+  stroke: #43464b !important;
 }
 
 .arrowheadPath {
-  fill: #707b7c !important;
+  fill: #43464b !important;
 }
 
 .label {
-  color: #111111 !important;
+  color: #101112 !important;
 }
 .label rect {
-  fill: #ffffff !important;
+  fill: white !important;
 }
 
 span.edgeLabel {
-  background-color: #ffffff !important;
-  color: #111111 !important;
+  background-color: white !important;
+  color: #101112 !important;
+}
+
+.node .label-container {
+  fill: #d2d5da !important;
+  stroke: #101112 !important;
+  color: #101112 !important;
+  stroke-width: 1px !important;
+}
+
+.node.atencao .label-container {
+  fill: #f3d05c !important;
+  stroke: #101112 !important;
+  color: #101112 !important;
+  stroke-width: 1px !important;
 }
 
 /* ---------------------------------------------- */
